@@ -1,0 +1,26 @@
+<ng-template #content let-modal>
+    <form [formGroup]="doseForm" (ngSubmit)="onSubmitDoseForm()">
+        <div class="modal-header">
+            <h4 class="modal-title">Dosis aanpassen</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="hp10Dose">Hp10 dose</label>
+                    <input type="number" step="0.01" name="hp10Dose" formControlName="hp10Dose" class="form-control" />
+                </div>
+                <div class="col-sm-12">
+                    <label for="remark">Opmerking</label>
+                    <input type="text" name="remark" formControlName="remark" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+            <button type="submit" class="btn btn-success" [disabled]="!doseForm.valid">Submit</button>
+        </div>
+    </form>
+</ng-template>

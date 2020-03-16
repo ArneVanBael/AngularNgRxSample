@@ -1,0 +1,8 @@
+<section class="section-padding" id="dosemanagement">
+    <h1>Doses: {{dosesLoadedMessage$ | async}}</h1>
+    <h5>Doses: {{ dosesAreLoadingMessage$ | async }}</h5>
+    
+    <button class="btn btn-primary" (click)="loadDoses()">load doses</button>
+
+    <app-dose-management-table *ngIf='doses$ | async as doses' [doses]='doses$ | async'></app-dose-management-table>
+</section>

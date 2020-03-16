@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Hp10Dose</th>
+            <th scope="col">Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dose of doses;" (click)="editDose(dose)">
+            <th scope="row">{{ dose.id }}</th>
+            <td>{{dose.hp10Dose}}</td>
+            <td>{{dose.remark}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<app-adjustment-model [isOpen]='isModalOpen$ | async'></app-adjustment-model>
